@@ -1,0 +1,13 @@
+/**
+ * Bootstrap overrides.
+ */
+
+:root {
+  --bs-body-color: #fff;
+  --bs-primary: #fff;
+  --bs-secondary: #fff;
+}
+
+a {
+  color: var(--bs-primary);
+}

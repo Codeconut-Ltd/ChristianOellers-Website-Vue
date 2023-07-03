@@ -1,0 +1,11 @@
+/**
+ * Custom theming.
+ */
+:root {
+  --co-link: #fff;
+  --co-link-state: #f8ffc3;
+  --co-accent-1: #42d392;
+  --co-accent-2: #647eff;
+  --co-text-select-fg: #7372a9;
+  --co-text-select-bg: #fff;
+}

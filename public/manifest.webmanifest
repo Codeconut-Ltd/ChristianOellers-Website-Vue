@@ -1,0 +1,16 @@
+{
+  "short_name": "Christian Oellers",
+  "name": "Christian Oellers - Ventures, References, Portfolio",
+  "lang": "en-US",
+  "start_url": "/?source=app-screen-home",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "https://static.codeconut.io/christianoellers/web/images/logos/site-webmanifest/192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
+}

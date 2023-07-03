@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+  <msapplication>
+    <tile>
+      <square70x70logo src="https://static.codeconut.io/christianoellers/web/images/logos/browserconfig/70.png"/>
+      <square150x150logo src="https://static.codeconut.io/christianoellers/web/images/logos/browserconfig/150.png"/>
+      <wide310x150logo src="https://static.codeconut.io/christianoellers/web/images/logos/browserconfig/310x150.png"/>
+      <square310x310logo src="https://static.codeconut.io/christianoellers/web/images/logos/browserconfig/310.png"/>
+    </tile>
+  </msapplication>
+</browserconfig>

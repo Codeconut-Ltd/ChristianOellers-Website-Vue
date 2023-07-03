@@ -1,0 +1,21 @@
+h1,
+h2,
+h3,
+h4,
+p {
+  cursor: default;
+}
+
+/**
+ * Remove Bootstrap focus ring and replace with sth. impractical ;)
+ */
+a:focus {
+  filter: blur(0.05rem);
+  outline: none;
+  box-shadow: none;
+}
+
+::selection {
+  color: var(--co-text-select-fg);
+  background: var(--co-text-select-bg);
+}

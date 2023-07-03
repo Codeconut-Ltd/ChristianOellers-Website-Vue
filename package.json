@@ -1,0 +1,59 @@
+{
+  "name": "co",
+  "description": "Personal website - Projects, Portfolio, Ventures, Contact",
+  "license": "(c) Christian Oellers",
+  "author": "Christian Oellers",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "npx vue-cli-service serve",
+    "build": "npx vue-cli-service build",
+    "lint": "npx vue-cli-service lint",
+    "lint:css": "npx stylelint 'src/**/*.css'",
+    "prettier:check": "npx prettier --check \"src/**/*.{js,css,vue}\"",
+    "prettierc:clean": "npx prettier --write \"src/**/*.{js,css,vue}\"",
+    "project:clean": "rm -rf node_modules",
+    "project:install": "npm run project:clean && npm install",
+    "project:update": "npm run project:clean && npm update"
+  },
+  "dependencies": {
+    "@formkit/vue": "^1.0.0-beta.11",
+    "@vitejs/plugin-vue": "^3.0.1",
+    "@vuelidate/core": "^2.0.0",
+    "@vuelidate/validators": "^2.0.0",
+    "bootstrap": "^5.1.3",
+    "bootstrap-vue": "^2.22.0",
+    "core-js": "^3.6.5",
+    "pinia": "^2.0.23",
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.2.37",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

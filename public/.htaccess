@@ -1,0 +1,72 @@
+# TOC
+# - Security
+# - Rewrites
+
+# --------------------------------------------------------------------------------------------------------------------------------- Security
+
+<IfModule mod_headers.c>
+
+  Header set Access-Control-Allow-Origin: https://static.codeconut.io
+
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # If needed: sync-xhr; sync-script
+  # Check API support:: document.featurePolicy.allowedFeatures()
+  # Header always set Feature-Policy "camera none; geolocation none; gyroscope none; magnetometer none; microphone none; payment none; speaker none; usb: none; vr: none"
+
+  # Increase step by step until (current value = 1 hour)
+  Header always set Strict-Transport-Security "max-age=3600; includeSubDomains; preload"
+
+
+  # If needed - Further domains:
+  # https://*.googleapis.com https://ssl.google-analytics.com https://www.google-analytics.com
+  Header always set Content-Security-Policy "default-src https:; img-src https: data:; script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com"
+
+  <FilesMatch "\.(svgz?)$">
+      Header set Content-Security-Policy "default-src 'none'; frame-ancestors 'none'; style-src 'self' 'unsafe-inline'"
+  </FilesMatch>
+
+
+  # Workaround: `mod_headers` cannot match based on the content-type
+  # https://webhint.io/docs/user-guide/hints/hint-no-html-only-headers/
+
+  <FilesMatch "\.(appcache|css|eot|gif|ico|jpe?g|m?js|json(ld)?|manifest|map|markdown|md|otf|pdf|png|rss|svgz?|ttf|txt|vcard|vcf|web[mp]|webmanifest|woff2?)$">
+    Header always unset Content-Security-Policy
+    Header always unset Feature-Policy
+    Header always unset X-XSS-Protection
+    Header always unset X-UA-Compatible
+    Header always unset X-WebKit-CSP
+  </FilesMatch>
+
+</IfModule>
+
+
+# --------------------------------------------------------------------------------------------------------------------------------- Rewrites
+
+<IfModule mod_rewrite.c>
+
+  RewriteEngine On
+  RewriteBase /
+
+  # Redirect to 'www' subdomain
+  RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+  RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^(www.)?christian-?oellers.de$ [NC,OR]
+  RewriteCond %{HTTP_HOST} ^(www.)?christian-oellers.com$ [NC,OR]
+  RewriteCond %{HTTP_HOST} !^www\. [NC]
+  RewriteRule ^(.*)$ https://www.christianoellers.com/$1 [R=301,L]
+
+  # Existing asset or directory; use as is
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+  RewriteRule ^ - [L]
+
+  # File doesn't exist; send 404
+  RewriteCond %{REQUEST_URI} ^(\/[a-z_\-\s0-9\.]+)+\.[a-zA-Z]{2,4}$
+  RewriteRule ^ - [L,R=404]
+
+  # Use history router otherwise
+  RewriteRule ^ /index.html
+
+</IfModule>

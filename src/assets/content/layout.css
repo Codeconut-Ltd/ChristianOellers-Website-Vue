@@ -1,0 +1,17 @@
+/**
+ * 1. Collapse navigation (Bootstrap): Prevent scroll on narrow (device) screen sizes.
+ * 2. Firefox (Desktop): Always showing the scrollbar is considered better
+ *    than having a jumpy page when it is toggled by the contents size.
+ */
+html {
+  overflow-x: hidden;
+  overflow-y: visible;
+  background: linear-gradient(315deg, var(--co-accent-1) 25%, var(--co-accent-2));
+}
+
+body {
+  background: transparent;
+
+  /* Min-height, not height, for mobile! */
+  min-height: 100vh;
+}
