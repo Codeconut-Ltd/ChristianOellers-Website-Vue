@@ -1,4 +1,6 @@
-# christianoellers.com
+![Personal website](teaser.png)
+
+# Personal website
 
 TOC
 
