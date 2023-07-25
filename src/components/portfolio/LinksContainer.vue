@@ -1,5 +1,5 @@
 <script>
-import PortfolioViewsLinks from './views/Links'
+import PortfolioViewsLinks from './views/Links';
 
 export default {
   components: {
@@ -15,18 +15,22 @@ export default {
         Code: [
           { key: 10, name: 'GitHub', url: 'https://github.com/ChristianOellers' },
           { key: 11, name: 'StackOverflow', url: 'https://stackoverflow.com/users/1045692/theremotecoder' },
+          { key: 12, name: 'CodePen', url: 'https://codepen.io/TheRemoteCoder' },
         ],
         Design: [
           { key: 20, name: 'Behance', url: 'https://www.behance.net/DrawfulMind' },
           { key: 21, name: 'Dribbble', url: 'https://dribbble.com/DrawfulMind' },
           { key: 22, name: 'ArtStation', url: 'https://www.artstation.com/drawfulmind' },
         ],
-      }
-    }
-  }
-}
+        Interests: [
+          { key: 30, name: 'Flickr', url: 'https://www.flickr.com/people/drawfulmind' },
+          { key: 31, name: 'SoundCloud', url: 'https://soundcloud.com/christian-oellers-cyp' },
+        ],
+      },
+    };
+  },
+};
 </script>
-
 
 <template>
   <section class="row justify-content-left justify-content-md-center text-center text-sm-start">
