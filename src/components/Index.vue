@@ -1,16 +1,14 @@
 <script>
-import PortfolioLinksContainer from './portfolio/LinksContainer'
-import PortfolioVenturesContainer from './portfolio/VenturesContainer'
+import PortfolioLinksContainer from './portfolio/LinksContainer';
+import PortfolioVenturesContainer from './portfolio/VenturesContainer';
 
 export default {
   components: {
     PortfolioLinksContainer,
     PortfolioVenturesContainer,
-  }
-}
-
+  },
+};
 </script>
-
 
 <template>
   <main role="main">
@@ -24,4 +22,3 @@ export default {
     </div>
   </main>
 </template>
-

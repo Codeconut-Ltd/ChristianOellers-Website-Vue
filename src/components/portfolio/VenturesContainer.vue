@@ -1,5 +1,5 @@
 <script>
-import PortfolioViewsVentures from './views/Ventures'
+import PortfolioViewsVentures from './views/Ventures';
 
 export default {
   components: {
@@ -29,24 +29,22 @@ export default {
         {
           key: 3,
           css: 'itsajourneything',
-          name: 'It\'s a Journey Thing',
+          name: "It's a Journey Thing",
           url: 'https://www.itsajourneything.com/',
         },
-      ]
-    }
-  }
-}
+      ],
+    };
+  },
+};
 </script>
-
 
 <template>
   <div class="co-tiles container-fluid px-0 py-5">
     <div class="row align-items-center">
-      <PortfolioViewsVentures v-for="(item) in categories" :key="item.key" :item="item" />
+      <PortfolioViewsVentures v-for="item in categories" :key="item.key" :item="item" />
     </div>
   </div>
 </template>
-
 
 <style>
 .co-tiles {
