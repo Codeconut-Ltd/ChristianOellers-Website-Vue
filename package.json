@@ -11,7 +11,7 @@
     "lint": "npx vue-cli-service lint",
     "lint:css": "npx stylelint 'src/**/*.css'",
     "prettier:check": "npx prettier --check \"src/**/*.{js,css,vue}\"",
-    "prettierc:clean": "npx prettier --write \"src/**/*.{js,css,vue}\"",
+    "prettier:clean": "npx prettier --write \"src/**/*.{js,css,vue}\"",
     "project:clean": "rm -rf node_modules",
     "project:install": "npm run project:clean && npm install",
     "project:update": "npm run project:clean && npm update"
